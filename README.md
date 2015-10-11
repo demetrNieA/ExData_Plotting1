@@ -1,3 +1,14 @@
+## Note from student
+
+Here is the my course project. It contains 7 .R files:
+
+* `downloadAndUnpack.R` - function to download data mentioned below. Can use customized URL.
+* `read.R` - function to extract data from dataset. Can use different filters.
+* `plot1.R`..`plot4.R` - functions to create plots.
+* `main.R` - main module, used to call all other modules in order to create all plots.
+
+Original README:
+
 ## Introduction
 
 This assignment uses data from

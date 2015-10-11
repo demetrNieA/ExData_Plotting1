@@ -20,7 +20,7 @@ readPowerConsumption <- function(electricPowerConsumption.DataSetPath,
   
   powerConsumption <- data.table()
   currPos <- 0
-  # Iterations while we do not read and filter all file
+  # We will iterate until we read and filter all file.
   while (TRUE) {
     message("Reading from row ", currPos)
     chunk <- read.table(
@@ -39,6 +39,7 @@ readPowerConsumption <- function(electricPowerConsumption.DataSetPath,
     currPos <- currPos + READ_COUNT
     # if there is no more rows
     if (nrow(chunk) == 0) {
+      # We parsing all values only here as we do not need them for filtered chunks.
       setnames(powerConsumption, colnames)
       powerConsumption[, GlobalActivePower := as.numeric(GlobalActivePower)]
       powerConsumption[, GlobalReactivePower := as.numeric(GlobalReactivePower)]
