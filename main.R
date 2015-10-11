@@ -6,6 +6,9 @@ source("plot3.R")
 source("plot4.R")
 
 createAllPlots <- function() {
+  # to get english-named dates
+  Sys.setlocale("LC_TIME", "C")
+  
   downloadAndUnzip()
   ds <- readPowerConsumption(electricPowerConsumption.DataSetPath = electricPowerConsumption.DataSetPath)
   createPlot1(ds)
